@@ -70,7 +70,7 @@ dat %>%
 A classic example of weighing benefits and harms in neonatology is the benefit
 of post-natal steroids on death and BPD weighed against the increased risk of
 cerebral palsy. The problem is that since infants who die can't develop cerebral
-palsy when we simulate many trials with a benefit on mortality and no effect on
+palsy, any treatment with a mortality benefit will appear to increase ceberal palsy risk. We can see that even when we simulate many trials with a benefit on mortality and no effect on
 development, it still looks like the intervention may be associated with harm. 
 
 ### So what?
@@ -98,5 +98,4 @@ knitr::include_graphics("www/collider.svg")
 
 --- 
 While it's tempting to try to analyze the effect on disability directly doing
-so would likely induce collider bias which will require careful consideration.
-The best way forward will depend on which perspective you need and which assumptions you're willing to make.
+so would likely induce collider bias which will require careful consideration to address. The best way forward will depend on which perspective you need and which assumptions you're willing to make.
