@@ -26,7 +26,7 @@ knitr::include_graphics("www/balance.svg")
 
 ------------------------------------------------------------------------
 
-Clinical trials and subsequent meta-analysis tend to include multiple outcomes
+Clinical trials and subsequent meta-analyses tend to include multiple outcomes
 that have decision making implications. Generally we are interested in finding
 interventions that maximize benefit while minimizing harm. There are many
 methods that can be used to achieve this, but the most important consideration
@@ -68,7 +68,7 @@ dat %>%
 ------------------------------------------------------------------------
 
 A classic example of weighing benefits and harms in neonatology is the benefit
-of post-natal steroids on death and BPD weighed against the increased risk of
+of post-natal steroids on death or BPD weighed against the increased risk of
 cerebral palsy. The problem is that since infants who die can't develop cerebral
 palsy, any treatment with a mortality benefit will appear to increase ceberal palsy risk. We can see that even when we simulate many trials with a benefit on mortality and no effect on
 development, it still looks like the intervention may be associated with harm. 
@@ -81,10 +81,9 @@ knitr::include_graphics("www/downstream.svg")
 
 ------------------------------------------------------------------------
 
-Comparing mortality against cerebral palsy can make sense from a resource allocation standpoint: funders need to consider that an intervention that an
-intervention that improves mortality might result in additional resource requirements for follow-up and early intervention. This is very different from
+Comparing the total effect of treatment on mortality against cerebral palsy can make sense from a resource allocation standpoint: funders need to consider that an intervention that improves mortality might result in additional resource requirements for follow-up and early intervention. This is very different from
 the problem faced by clinicians who want to make sure their intervention isn't
-creating too much additional risk in an individual patient. A clinician who uses
+creating too much additional risk in an individual patient (the direct effect). A clinician who uses
 these outputs to inform discussions with patients might inappropriately suggest
 that the therapy may increase the risk of developmental delay, or alternatively
 could present results of a composite (eg Death or disability) and say there is
@@ -97,5 +96,16 @@ knitr::include_graphics("www/collider.svg")
 ```
 
 --- 
-While it's tempting to try to analyze the effect on disability directly doing
-so would likely induce collider bias which will require careful consideration to address. The best way forward will depend on which perspective you need and which assumptions you're willing to make.
+While it's tempting to try to the direct effect on disability doing
+so would likely induce collider bias which will require careful consideration to address. The best way forward will depend on the particular context of a decision but a couple questions to consider might be:
+
+1. Which perspective do you need? If you're making resource allocation decisions
+then the total effect of intervention on downstream effects is likely relevant.
+
+1. Which assumptions are you willing to make? If
+you believe you can predict survival and all patients have a non zero probability of survival you may be able to get a reasonable estimate
+of the direct effect of therapy on development.
+
+1. How large is the effect on mortality? If mortality is rare or the effect is small then the total effect (or population level effect) and direct effect will be more
+similar.
+bias 
